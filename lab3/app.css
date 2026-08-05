@@ -1,0 +1,37 @@
+.App {
+  display: block;          /* remove flex center */
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.resume {
+  background: #ffffff;
+  padding: 30px;
+  width: 700px;
+  margin: 0;               /* remove auto-centering */
+  font-family: Arial, sans-serif;
+  text-align: left;        /* force left alignment */
+}
+
+/* Force everything inside to left */
+.resume * {
+  text-align: left !important;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+h2 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+ul {
+  margin-left: 20px;
+}
