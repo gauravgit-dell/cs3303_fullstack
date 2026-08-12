@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
 
     // Regular expressions
     const usernameRegex = /^[A-Za-z0-9_]{3,15}$/;
+
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
@@ -23,6 +26,9 @@ function App() {
       setUsernameError(
         "Username must be 3-15 characters and contain only letters, numbers, or underscore."
       );
+
+      toast.error("Invalid username");
+
       valid = false;
     } else {
       setUsernameError("");
@@ -33,6 +39,9 @@ function App() {
       setPasswordError(
         "Password must have 8+ characters, uppercase, lowercase, number and special character."
       );
+
+      toast.error("Invalid password");
+
       valid = false;
     } else {
       setPasswordError("");
@@ -51,7 +60,8 @@ function App() {
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
 
-    alert("Login successful!");
+    // Success toast
+    toast.success("Login successful!");
   };
 
   return (
@@ -68,7 +78,10 @@ function App() {
             type="text"
             placeholder="Enter username"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => {
+              setUsername(e.target.value);
+              setUsernameError("");
+            }}
             required
           />
 
@@ -85,7 +98,10 @@ function App() {
             type="password"
             placeholder="Enter password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setPasswordError("");
+            }}
             required
           />
 
@@ -97,6 +113,15 @@ function App() {
         <button type="submit">Login</button>
 
       </form>
+
+      {/* Toast notifications */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+      />
     </div>
   );
 }
