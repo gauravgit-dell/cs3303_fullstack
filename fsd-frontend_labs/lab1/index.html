@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 1 - Web Development Environment</title>
+</head>
+
+<body>
+
+    <h1>Modern Web Development Environment</h1>
+
+    <p id="message">
+        Welcome to Web Development Lab 1.
+    </p>
+
+    <button onclick="showMessage()">Click Me</button>
+
+    <script>
+        function showMessage() {
+            console.log("Button clicked successfully!");
+
+            document.getElementById("message").textContent =
+                "The DOM was successfully modified!";
+        }
+    </script>
+
+</body>
+</html>

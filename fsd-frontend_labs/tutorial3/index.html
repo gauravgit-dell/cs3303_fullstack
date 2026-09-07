@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial 3 - JavaScript</title>
+</head>
+
+<body>
+
+<h1>Student Registration</h1>
+
+<form id="studentForm">
+
+    <input
+        type="text"
+        id="name"
+        placeholder="Enter your name"
+    >
+
+    <input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+    >
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<p id="message"></p>
+
+<script>
+
+document.getElementById("studentForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message");
+
+    if (name === "" || email === "") {
+        message.textContent = "Please fill all fields.";
+        return;
+    }
+
+    message.textContent =
+        "Registration successful! Welcome " + name;
+});
+
+</script>
+
+</body>
+</html>

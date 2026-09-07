@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 4 - Interactive Web Application</title>
+</head>
+
+<body>
+
+<h1>Counter Application</h1>
+
+<h2 id="count">0</h2>
+
+<button onclick="increase()">+</button>
+<button onclick="decrease()">-</button>
+<button onclick="reset()">Reset</button>
+
+<script>
+
+let count = 0;
+
+function updateUI() {
+    document.getElementById("count").textContent = count;
+}
+
+function increase() {
+    count++;
+    updateUI();
+}
+
+function decrease() {
+    count--;
+    updateUI();
+}
+
+function reset() {
+    count = 0;
+    updateUI();
+}
+
+</script>
+
+</body>
+</html>
