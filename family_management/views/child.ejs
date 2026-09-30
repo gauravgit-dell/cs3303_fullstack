@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Child Details</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Child Details</h1>
+
+
+    <div class="card">
+
+        <h2>
+            <%= child.firstName %>
+            <%= child.lastName %>
+        </h2>
+
+        <p>
+            <strong>Age:</strong>
+            <%= child.age %>
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            <%= child.email %>
+        </p>
+
+        <p>
+            <strong>Parent:</strong>
+            <%= user.firstName %>
+            <%= user.lastName %>
+        </p>
+
+    </div>
+
+
+    <h2>Update Child</h2>
+
+
+    <div class="card">
+
+        <form
+            action="/children/<%= child._id %>?_method=PATCH"
+            method="POST"
+        >
+
+            <label>First Name</label>
+
+            <input
+                type="text"
+                name="firstName"
+                value="<%= child.firstName %>"
+                required
+            >
+
+
+            <label>Last Name</label>
+
+            <input
+                type="text"
+                name="lastName"
+                value="<%= child.lastName %>"
+                required
+            >
+
+
+            <label>Age</label>
+
+            <input
+                type="number"
+                name="age"
+                value="<%= child.age %>"
+                min="0"
+                required
+            >
+
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                name="email"
+                value="<%= child.email %>"
+                required
+            >
+
+
+            <button type="submit">
+                Update Child
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <br>
+
+    <a href="/users/<%= user._id %>">
+        Back to Parent Profile
+    </a>
+
+</div>
+
+</body>
+
+</html>
