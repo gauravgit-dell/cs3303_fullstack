@@ -13,15 +13,30 @@ const App = () => {
 
     const [category, setCategory] = useState(0)
 
+    const [darkMode, setDarkMode] = useState(false)
+
+
+    const toggleDarkMode = () => {
+        setDarkMode(prev => !prev)
+    }
+
+
     return (
-        <>
-            <Navbar setSidebarOpen={setSidebarOpen} />
+        <div className={darkMode ? 'app dark-mode' : 'app'}>
+
+            <Navbar
+                setSidebarOpen={setSidebarOpen}
+                darkMode={darkMode}
+                toggleDarkMode={toggleDarkMode}
+            />
+
 
             <Sidebar
                 sidebarOpen={sidebarOpen}
                 category={category}
                 setCategory={setCategory}
             />
+
 
             <Routes>
 
@@ -35,6 +50,7 @@ const App = () => {
                     }
                 />
 
+
                 <Route
                     path="/video/:categoryId/:videoId"
                     element={
@@ -47,7 +63,8 @@ const App = () => {
                 />
 
             </Routes>
-        </>
+
+        </div>
     )
 }
 

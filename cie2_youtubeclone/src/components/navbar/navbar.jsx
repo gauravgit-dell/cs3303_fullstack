@@ -8,9 +8,14 @@ import upload_icon from '../../assets/upload.png'
 import notification_icon from '../../assets/notification.png'
 import profile_icon from '../../assets/jack.png'
 
-const Navbar = ({ setSidebarOpen }) => {
+const Navbar = ({
+    setSidebarOpen,
+    darkMode,
+    toggleDarkMode
+}) => {
 
     return (
+
         <nav className="navbar">
 
             <div className="nav_left flex-div">
@@ -21,6 +26,7 @@ const Navbar = ({ setSidebarOpen }) => {
                     className="menu-icon"
                     onClick={() => setSidebarOpen(prev => !prev)}
                 />
+
 
                 <img
                     src={logo}
@@ -39,6 +45,7 @@ const Navbar = ({ setSidebarOpen }) => {
                     className="search-bar"
                 />
 
+
                 <img
                     src={search_icon}
                     alt="search"
@@ -55,14 +62,27 @@ const Navbar = ({ setSidebarOpen }) => {
                     alt="upload"
                 />
 
-                <span className="mode-icon">
-                    🌙
+
+                <span
+                    className="mode-icon"
+                    onClick={toggleDarkMode}
+                    title={
+                        darkMode
+                            ? 'Switch to Light Mode'
+                            : 'Switch to Dark Mode'
+                    }
+                >
+
+                    {darkMode ? '☀️' : '🌙'}
+
                 </span>
+
 
                 <img
                     src={notification_icon}
                     alt="notification"
                 />
+
 
                 <img
                     src={profile_icon}
@@ -73,6 +93,7 @@ const Navbar = ({ setSidebarOpen }) => {
             </div>
 
         </nav>
+
     )
 }
 

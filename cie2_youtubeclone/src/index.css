@@ -18,3 +18,105 @@ img {
     display: flex;
     align-items: center;
 }
+
+
+/* Dark Mode */
+
+.dark-mode {
+    background: #181818;
+    color: white;
+}
+
+.dark-mode .container,
+.dark-mode .video-page {
+    background: #181818;
+}
+
+
+/* Navbar */
+
+.dark-mode .navbar {
+    background: #212121;
+}
+
+
+/* Sidebar */
+
+.dark-mode .sidebar,
+.dark-mode .small-sidebar {
+    background: #212121;
+    color: white;
+}
+
+.dark-mode .sidebar p,
+.dark-mode .small-sidebar p,
+.dark-mode .sidebar h3 {
+    color: #ddd;
+}
+
+
+/* Search */
+
+.dark-mode .search-bar {
+    background: #121212;
+    color: white;
+    border-color: #555;
+}
+
+.dark-mode .search-bar::placeholder {
+    color: #aaa;
+}
+
+
+/* Home Cards */
+
+.dark-mode .card h2 {
+    color: white;
+}
+
+.dark-mode .card h3,
+.dark-mode .card p {
+    color: #aaa;
+}
+
+
+/* Video */
+
+.dark-mode .play-video h1 {
+    color: white;
+}
+
+.dark-mode .video-info {
+    color: #aaa;
+}
+
+.dark-mode .publisher p,
+.dark-mode .publisher span,
+.dark-mode .video-description p {
+    color: #aaa !important;
+}
+
+
+/* Comments */
+
+.dark-mode .comments h3,
+.dark-mode .comment h4 {
+    color: white;
+}
+
+.dark-mode .comment p,
+.dark-mode .comment h4 span,
+.dark-mode .comment-action span {
+    color: #aaa;
+}
+
+
+/* Recommended */
+
+.dark-mode .vid-info h4 {
+    color: white;
+}
+
+.dark-mode .vid-info p {
+    color: #aaa;
+}
